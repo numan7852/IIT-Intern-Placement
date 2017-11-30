@@ -17,13 +17,6 @@ class CreateCompaniesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
-            $table->string('position');
-            $table->string('responsibility');
-            $table->string('hr_id');
-            $table->foreign('hr_id')
-                ->references('id')->on('hrs')
-                ->ondelete('cascade')
-                ->onupdate('cascade');
             $table->timestamps();
         });
     }

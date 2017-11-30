@@ -15,13 +15,15 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();;
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->ondelete('cascade')
                 ->onupdate('cascade');
-            $table->string('session');
-            $table->string('roll');
+            $table->string('session')->nullable();
+            $table->string('roll')->nullable();
+            $table->float('cgpa',3,2)->nullable();
+            $table->boolean('status');
             $table->timestamps();
         });
     }

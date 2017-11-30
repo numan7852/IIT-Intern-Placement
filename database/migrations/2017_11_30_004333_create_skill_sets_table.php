@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRatingsTable extends Migration
+class CreateSkillSetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,19 @@ class CreateRatingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('skill_sets', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')
                 ->references('id')->on('students')
                 ->ondelete('cascade')
                 ->onupdate('cascade');
-            $table->integer('company_id')->unsigned();
-            $table->foreign('company_id')
-                ->references('id')->on('companies')
+            $table->integer('skill_id')->unsigned();
+            $table->foreign('skill_id')
+                ->references('id')->on('skills')
                 ->ondelete('cascade')
                 ->onupdate('cascade');
-            $table->integer('rating')->unsigned();
+            $table->integer('score')->unsigned();
             $table->timestamps();
         });
     }
@@ -37,6 +37,6 @@ class CreateRatingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ratings');
+        Schema::dropIfExists('skill_sets');
     }
 }

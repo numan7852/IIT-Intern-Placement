@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateHRsTable extends Migration
+class CreateSkillsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateHRsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hrs', function (Blueprint $table) {
+        Schema::create('skills', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('company_id')->unsigned()->nullable();
-            $table->foreign('company_id')
-                ->references('id')->on('companies')
-                ->ondelete('cascade')
-                ->onupdate('cascade');
-            $table->boolean('status');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateHRsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hrs');
+        Schema::dropIfExists('skills');
     }
 }
