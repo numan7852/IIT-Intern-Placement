@@ -9,68 +9,45 @@
 						<p><b>Name:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>Nur Mohammed</p>
+						<p>Sekai Lab</p>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-md-3">
-						<p><b>Email:</b></p>
+						<p><b>Address:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>student@example.com</p>
+						<p>Company address</p>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-md-3">
-						<p><b>Session:</b></p>
+						<p><b>Website:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>2013-14</p>
+						<p>wwww.com</p>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-md-3">
-						<p><b>Roll:</b></p>
+						<p><b>HR Name:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>BSSE 0624</p>
+						<p>HR</p>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-md-3">
-						<p><b>CGPA:</b></p>
+						<p><b>HR Email:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>2.75</p>
+						<p>hr@example.com</p>
 					</div>
 				</div>
-
-				<div class="row">
-					<div class="col-md-3">
-						<p><b>SkillSet:</b></p>
-					</div>
-					<div class="col-md-9">
-						<p>
-							<p>
-								<span>PHP -</span>
-								<span>5</span>
-							</p> 
-							<p>
-								<span>JS -</span>
-								<span>4</span>
-							</p>
-						</p>
-					</div>
-				</div>
-				<div>
-					<a href="{{route('editProfile')}}">
-						<button class="btn btn-default" style="float: right;">Edit</button>
-					</a>
-				</div>	
 			</div>
 		</div>
 	</div>

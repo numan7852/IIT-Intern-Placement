@@ -14,7 +14,11 @@ class UserController extends Controller
     }
     
     public function profile(){
-        $user = Auth::user();
-        return view('profile',compact('user'));
+        // $user = Auth::user();
+        return view('profile');
+    }
+
+    public function showEditForm(){
+    	return view('editProfile');
     }
 }

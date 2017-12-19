@@ -13,39 +13,22 @@
 		    </tr>
 		  </thead>
 		  <tbody>
+		    @foreach($companies as $i=>$company)
+
 		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
-		      <td>Otto</td>
+		      <th scope="row">{{$i+1}}</th>
+		      <td>{{$company->name}}</td>
+		      <td>{{$company->address}}</td>
+		      <td>{{$company->website}}</td>
 		      <td>
-		      	<a class="btn btn-primary" href="">View</a>
-		      	<a class="btn btn-warning" href="">Edit</a>
-		      	<a class="btn btn-danger" href="">Delete</a>
+		      	<a class="btn btn-primary" href="{{route('companyInformation')}}">View</a>
+		      	@if(Auth::user()->type == "RPO")
+		      		<a class="btn btn-warning" href="">Edit</a>
+		      		<a class="btn btn-danger" href="">Delete</a>
+		      	@endif
 		      </td>
 		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      <td>Otto</td>
-		      <td>
-		      	<a class="btn btn-primary" href="">View</a>
-		      	<a class="btn btn-warning" href="">Edit</a>
-		      	<a class="btn btn-danger" href="">Delete</a>		      	
-		      </td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>Larry</td>
-		      <td>the Bird</td>
-		      <td>Otto</td>
-		      <td>
-		      	<a class="btn btn-primary" href="">View</a>
-		      	<a class="btn btn-warning" href="">Edit</a>
-		      	<a class="btn btn-danger" href="">Delete</a>
-		      </td>
-		    </tr>
+		    @endforeach
 		  </tbody>
 		</table>
 	</div>

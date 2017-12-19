@@ -12,36 +12,22 @@
 		    </tr>
 		  </thead>
 		  <tbody>
+
+		  	@foreach($students as $i=>$student)
+
 		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
+		      <th scope="row">{{$i+1}}</th>
+		      <td>{{$student->user->name}}</td>
+		      <td>{{$student->user->email}}</td>
 		      <td>
-		      	<a class="btn btn-primary" href="">View</a>
-		      	<a class="btn btn-warning" href="">Edit</a>
-		      	<a class="btn btn-danger" href="">Delete</a>
+		      	<a class="btn btn-primary" href="{{route('studentInformation')}}">View</a>
+		      	@if(Auth::user()->type == "RPO")
+		      		<a class="btn btn-warning" href="">Edit</a>
+		      		<a class="btn btn-danger" href="">Delete</a>
+		      	@endif
 		      </td>
 		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      <td>
-		      	<a class="btn btn-primary" href="">View</a>
-		      	<a class="btn btn-warning" href="">Edit</a>
-		      	<a class="btn btn-danger" href="">Delete</a>		      	
-		      </td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>Larry</td>
-		      <td>the Bird</td>
-		      <td>
-		      	<a class="btn btn-primary" href="">View</a>
-		      	<a class="btn btn-warning" href="">Edit</a>
-		      	<a class="btn btn-danger" href="">Delete</a>
-		      </td>
-		    </tr>
+		    @endforeach
 		  </tbody>
 		</table>
 	</div>

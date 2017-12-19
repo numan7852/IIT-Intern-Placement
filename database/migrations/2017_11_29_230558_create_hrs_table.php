@@ -15,6 +15,11 @@ class CreateHRsTable extends Migration
     {
         Schema::create('hrs', function (Blueprint $table) {
             $table->increments('id');
+            $table->increments('user_id');
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->ondelete('cascade')
+                ->onupdate('cascade');
             $table->integer('company_id')->unsigned()->nullable();
             $table->foreign('company_id')
                 ->references('id')->on('companies')

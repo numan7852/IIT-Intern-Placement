@@ -13,7 +13,10 @@
                     <a href="{{ route('company') }}">Company</a>
                 </li>
                 <li role="presentation">
-                    <a href="">Upload CGPA</a>
+                    <a href="{{ route('rpoSkillSet') }}">Skill Set</a>
+                </li>
+                <li role="presentation">
+                    <a href="{{ route ('uploadCGPA') }}">Upload CGPA</a>
                 </li>
                 <li role="presentation">
                     <a href="{{ route('companyAllocation') }}">Company Allocation</a>

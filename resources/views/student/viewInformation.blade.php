@@ -66,11 +66,7 @@
 						</p>
 					</div>
 				</div>
-				<div>
-					<a href="{{route('editProfile')}}">
-						<button class="btn btn-default" style="float: right;">Edit</button>
-					</a>
-				</div>	
+
 			</div>
 		</div>
 	</div>
