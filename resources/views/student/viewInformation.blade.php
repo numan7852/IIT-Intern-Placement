@@ -9,7 +9,7 @@
 						<p><b>Name:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>Nur Mohammed</p>
+						<p>{{$student->user->name}}</p>
 					</div>
 				</div>
 
@@ -18,7 +18,7 @@
 						<p><b>Email:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>student@example.com</p>
+						<p>{{$student->user->email}}</p>
 					</div>
 				</div>
 
@@ -27,7 +27,7 @@
 						<p><b>Session:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>2013-14</p>
+						<p>{{$student->session}}</p>
 					</div>
 				</div>
 
@@ -36,7 +36,7 @@
 						<p><b>Roll:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>BSSE 0624</p>
+						<p>{{$student->roll}}</p>
 					</div>
 				</div>
 
@@ -45,7 +45,7 @@
 						<p><b>CGPA:</b></p>
 					</div>
 					<div class="col-md-9">
-						<p>2.75</p>
+						<p>{{$student->cgpa}}</p>
 					</div>
 				</div>
 
@@ -55,14 +55,12 @@
 					</div>
 					<div class="col-md-9">
 						<p>
+							@foreach($skillSets as $skillSet)
 							<p>
-								<span>PHP -</span>
-								<span>5</span>
+								<span>{{$skillSet->skill->name}} - </span>
+								<span>{{$skillSet->score}}</span>
 							</p> 
-							<p>
-								<span>JS -</span>
-								<span>4</span>
-							</p>
+							@endforeach
 						</p>
 					</div>
 				</div>

@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>IIPOS</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -13,11 +13,14 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                /*background-color: #fff;*/
+                background: url(http://www.iit.du.ac.bd/assets/img/sliders/revolution/bg1.jpg) no-repeat;
+                background-size: 100% 100%;
+                background-position: center;
+                color: #fff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
-                height: 100vh;
+                height: 100%;
                 margin: 0;
             }
 
@@ -36,6 +39,7 @@
             }
 
             .top-right {
+                background-color: black;
                 position: absolute;
                 right: 10px;
                 top: 18px;
@@ -43,16 +47,18 @@
 
             .content {
                 text-align: center;
+                padding: 0px 100px;
+                background: rgba(0,0,0, .75);
             }
 
             .title {
-                font-size: 84px;
+                font-size: 60px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: white;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 14px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -79,15 +85,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    IIT IPOS
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    IIT Internship Placement Office System
                 </div>
             </div>
         </div>

@@ -2,8 +2,7 @@
 
 @section('content')
 	<div class="col-md-8">
-		<div class="panel panel-default">
-			<div class="panel-body">
+		<div class="well">
 				<form class="form-horizontal" method="POST" action="{{ route('company_store') }}">
 					{{ csrf_field() }}
 
@@ -38,7 +37,6 @@
 			    	</div>
 				</form>
 
-			</div>
 		</div>
 	</div>
 @endsection

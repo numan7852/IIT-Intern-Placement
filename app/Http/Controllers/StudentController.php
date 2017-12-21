@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\SkillSet;
 
 class StudentController extends Controller
 {
@@ -13,8 +14,10 @@ class StudentController extends Controller
     	return view ('student.index', compact('students'));
     }
 
-    public function viewStudentInformation(){
-        return view ('student.viewInformation');
+    public function viewStudentInformation($id){
+        $student = Student::find($id);
+        $skillSets = SkillSet::where('student_id', $student->id)->get();
+        return view ('student.viewInformation', compact('student', 'skillSets'));
     }
 
     public function viewskillSetList(){

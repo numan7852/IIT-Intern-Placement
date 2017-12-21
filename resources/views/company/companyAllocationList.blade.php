@@ -2,55 +2,30 @@
 
 @section('content')
 	<div class="col-md-8">
-		<table class="table">
-		  <thead class="thead-light">
-		    <tr>
-		      <th scope="col">#</th>
-		      <th scope="col">Student Name</th>
-		      <th scope="col">Allocate Company Name</th>
-		      <th scope="col">Action</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
-		      <td>
-		      	@if(Auth::user()->type == 'IPOH')
-		      		<a class="btn btn-primary" href="">View</a>
-		      		<a class="btn btn-warning" href="">Edit</a>
-		      		<a class="btn btn-danger" href="">Delete</a>
-		      	@endif
-		      </td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      <td>
-		      	<a class="btn btn-primary" href="">View</a>
-		      	<a class="btn btn-warning" href="">Edit</a>
-		      	<a class="btn btn-danger" href="">Delete</a>		      	
-		      </td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>Larry</td>
-		      <td>the Bird</td>
-		      <td>
-		      	<a class="btn btn-primary" href="">View</a>
-		      	<a class="btn btn-warning" href="">Edit</a>
-		      	<a class="btn btn-danger" href="">Delete</a>
-		      </td>
-		    </tr>
-		  </tbody>
-		</table>
-		@if(Auth::user()->type == 'IPOH')
-			<button class="btn btn-primary btn-sm center-block">
-			    Confirm Allocation List
-			</button>
-		@endif
+		<div class="well">
+			<table class="table">
+			  <thead class="thead-light">
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Student Name</th>
+			      <th scope="col">Student Roll</th>
+			      <th scope="col">Student Email</th>
+			      <th scope="col">Allocate Company Name</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  	@foreach($allocations as $i => $allocation)
+				    <tr>
+				      <th scope="row">{{$i+1}}</th>
+				      <td>{{$allocation->student->user->name}}</td>
+				      <td>{{$allocation->student->roll}}</td>
+				      <td>{{$allocation->student->user->email}}</td>
+				      <td>{{$allocation->company->name}}</td>
+				    </tr>
+			    @endforeach
+			  </tbody>
+			</table>
+		</div>
 		
 	</div>
 @endsection

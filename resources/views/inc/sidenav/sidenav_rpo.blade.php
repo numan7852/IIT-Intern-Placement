@@ -21,6 +21,9 @@
                 <li role="presentation">
                     <a href="{{ route('companyAllocation') }}">Company Allocation</a>
                 </li>
+                <li role="presentation">
+                    <a href="{{ route('companyRating') }}">Company Rating</a>
+                </li>
             </ul>
         </div>
     </div>

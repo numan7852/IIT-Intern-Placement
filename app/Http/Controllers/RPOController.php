@@ -22,7 +22,7 @@ class RPOController extends Controller
     }
 
 
-    public function storeSkillScore(Request $request){
+/*    public function storeSkillScore(Request $request){
     	for ($i=0; $i<count($request->skill_score); $i++){
     		$skillSet = new SkillSet;
     		$skillSet->student_id = Auth::user()->student->id;
@@ -35,5 +35,5 @@ class RPOController extends Controller
     	}
 
     	return redirect('/home');
-    }
+    }*/
 }

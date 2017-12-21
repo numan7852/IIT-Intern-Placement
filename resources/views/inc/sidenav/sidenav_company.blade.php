@@ -10,7 +10,7 @@
                     <a href="{{ route('student') }}">Student</a>
                 </li>
                 <li role="presentation">
-                    <a href="{{ route('companyInformation') }}">Company Information</a>
+                    <a href="{{ route('viewCompanyInformation') }}">Company Information</a>
                 </li>
                 <li role="presentation">
                     <a href="{{ route('companyAllocation') }}">Company Allocation</a>

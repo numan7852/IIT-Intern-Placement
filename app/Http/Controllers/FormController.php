@@ -7,13 +7,55 @@ use App\Company;
 use App\Student;
 use App\Choice;
 use Auth;
+use App\Config;
 
 class FormController extends Controller
 {
     public function viewChoiceForm(){
-    	$companies = Company::all();
-    	$student = Student::where('user_id', Auth::user()->id)->first();
-    	return view('form.index',compact('companies', 'student'));
+
+        $config = Config::find(1);
+        if($config->choice_form_status == 1){
+            $companies = Company::all();
+            $student = Student::where('user_id', Auth::user()->id)->first();
+            return view('form.index',compact('companies', 'student'));
+        }
+
+        else{
+            return redirect('/home');
+        }
+    }
+
+    public function choiceFormEnable(Request $request){
+        $config = Config::find(1);
+        $config->choice_form_status = true;
+        $config->save();
+
+        return redirect()->back();
+    }
+
+    public function choiceFormDisable(Request $request){
+        $config = Config::find(1);
+        $config->choice_form_status = 0;
+        $config->save();
+
+        return redirect()->back();
+    }
+
+
+    public function ratingFormEnable(Request $request){
+        $config = Config::find(1);
+        $config->rating_form_status = true;
+        $config->save();
+
+        return redirect()->back();
+    }
+
+    public function ratingFormDisable(Request $request){
+        $config = Config::find(1);
+        $config->rating_form_status = 0;
+        $config->save();
+
+        return redirect()->back();
     }
 
     public function storeChoiceForm(Request $request){

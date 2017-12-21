@@ -19,9 +19,6 @@
                     <a href="{{ route('companyAllocation') }}">Company Allocation</a>
                 </li>
                 <li role="presentation">
-                    <a href="{{ route('companyRatingForm') }}">Company Rating Form</a>
-                </li>
-                <li role="presentation">
                     <a href="{{ route('companyRatingForm') }}">Company Rating</a>
                 </li>
             </ul>
